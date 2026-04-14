@@ -15,7 +15,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly
-  int result = myFunction(rand(),rand());
+  int result = myFunction(5, 10);
   Serial.print("The result of myFunction(5, 10) is: ");
   Serial.println(result);
 }
