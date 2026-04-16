@@ -3,6 +3,8 @@
 
 void setup() {
     sanity_serial("jeep");
+    sanity_board_info("jeep");
+    sanity_espnow("jeep");
 }
 
 void loop() {
