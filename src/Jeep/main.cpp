@@ -1,13 +1,10 @@
 #include <Arduino.h>
-
-#include "Robot.h"
-
-//Robot robot;
+#include <sanity.h>
 
 void setup() {
-    //robot.robotInit();
+    sanity_serial("jeep");
 }
 
 void loop() {
-    //robot.robotPeriodic();
+    delay(1000);
 }
