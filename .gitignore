@@ -3,3 +3,16 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
+# Remove some noise. These are files that break the build.
+
+# macOS noise
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows noise
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk

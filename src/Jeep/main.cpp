@@ -2,12 +2,12 @@
 
 #include "Robot.h"
 
-Robot robot;
+//Robot robot;
 
 void setup() {
-    robot.robotInit();
+    //robot.robotInit();
 }
 
 void loop() {
-    robot.robotPeriodic();
+    //robot.robotPeriodic();
 }
