@@ -28,6 +28,12 @@ void setup() {
 
     delay(5000);  // 5 seconds of forward motion
 
+    Serial.println("[jeep] Auto-drive starting...");
+    digitalWrite(motorA, LOW);
+    digitalWrite(motorB, HIGH);
+
+    delay(5000);  // 5 seconds of reverse motion
+
     Serial.println("[jeep] Auto-drive complete. Stopping.");
     digitalWrite(motorA, LOW);
     digitalWrite(motorB, LOW);
