@@ -1,38 +1,38 @@
 #include <Arduino.h>
 #include <sanity.h>
+#include <ESP32Servo.h>
+#include "Constants.h"
+
+Servo steering;
+
+
 
 void setup() {
     sanity_serial("jeep");
     sanity_board_info("jeep");
-    sanity_espnow("jeep");
-}
 
-void loop() {
+    // Steering
+    steering.attach(5);
+    delay(500);
+    steering.writeMicroseconds(1500);
+    Serial.println("[jeep] Steering centered");
     delay(1000);
-}
-#include <Arduino.h>
-#include <sanity.h>
-#include "JeepMotion.h"
 
-// Pin definitions (adjust to your wiring)
-constexpr int STEER_PIN = 5;
-constexpr int MOTOR_A   = 9;
-constexpr int MOTOR_B   = 10;
+    // Motor pins
+    pinMode(motorA, OUTPUT);
+    pinMode(motorB, OUTPUT);
 
-JeepMotion jeep(STEER_PIN, MOTOR_A, MOTOR_B);
+    Serial.println("[jeep] Auto-drive starting...");
+    digitalWrite(motorA, HIGH);
+    digitalWrite(motorB, LOW);
 
-void setup() {
-    sanity_serial("jeep");
-    sanity_board_info("jeep");
+    delay(5000);  // 5 seconds of forward motion
 
-    jeep.begin();
-    jeep.centerSteering();
-
-    delay(2000); // let you align the wheels
-
-    jeep.autoDriveForward(5000); // 5 seconds
+    Serial.println("[jeep] Auto-drive complete. Stopping.");
+    digitalWrite(motorA, LOW);
+    digitalWrite(motorB, LOW);
 }
 
 void loop() {
-    // idle
+    // stay idle
 }
