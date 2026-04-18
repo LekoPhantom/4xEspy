@@ -1,13 +1,23 @@
-// This document is where you can put universal constants that are used across multiple files in the project. For example, you might want to define the broadcast address for ESP-NOW communication here, so that it can be easily updated in one place if needed. You can also include any other constants that are relevant to your project, such as pin numbers, message formats, or timing intervals.
+// Universal constants for the Jeep project.
+// Pin assignments, message formats, timing intervals, etc.
 
+// =======================
+// Motor Pins (H-Bridge)
+// =======================
+// Front motor uses two GPIOs for direction control.
+// IO8 and IO7 are safe, non-strapping, non-flash pins.
+const int motorA = 8;   // IN1 (front motor)
+const int motorB = 7;   // IN2 (front motor)
 
-//Motors: Each motor needs two pins if using the H bridge, but for simplicity we will assume one pin per motor for forward motion and the other pin will be used for reverse motion. Adjust as necessary based on your specific motor driver and wiring.
-const int motorA = 8;
-const int motorB = 9;
-
-//Servo
+// =======================
+// Steering Servo
+// =======================
+// IO5 is a clean PWM-capable pin on the ESP32-C3.
 const int steeringPin = 5;
 
-//Neopixels
-const int numPixels = 2;
+// =======================
+// NeoPixels
+// =======================
+// IO10 is safe for RMT-driven NeoPixels.
 const int pixelPin = 10;
+const int numPixels = 2;
