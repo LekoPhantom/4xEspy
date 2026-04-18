@@ -2,8 +2,12 @@
 
 
 //Motors: Each motor needs two pins if using the H bridge, but for simplicity we will assume one pin per motor for forward motion and the other pin will be used for reverse motion. Adjust as necessary based on your specific motor driver and wiring.
-const int motorA = 9;
-const int motorB = 10;
+const int motorA = 8;
+const int motorB = 9;
 
 //Servo
 const int steeringPin = 5;
+
+//Neopixels
+const int numPixels = 2;
+const int pixelPin = 10;
